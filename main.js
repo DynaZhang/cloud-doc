@@ -12,7 +12,11 @@ app.on('ready', () => {
   })
   console.log(isDev)
   const urlLocation = isDev ? 'http://localhost:3000' : 'null'
-  mainWindow.loadURL(urlLocation)
-  
+  mainWindow.loadURL(urlLocation).then(() => {
+    mainWindow.webContents.openDevTools({
+      mode: 'right'
+    })
+  })
+
 })
 
