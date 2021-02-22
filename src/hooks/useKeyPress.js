@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react'
 
-export const useKeyPress = (props) => {
-  const {targetKeyCode} = props
+export const useKeyPress = (targetKeyCode) => {
   const [keyPressed, setKeyPressed] = useState(false)
 
   const handleKeyDown = (e) => {

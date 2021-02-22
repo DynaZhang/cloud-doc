@@ -27,7 +27,7 @@ const TabList = (props) => {
                   <FontAwesomeIcon icon={faTimes} title="关闭"/>
                 </span>
                 {
-                  withUnsaveMark && <span className="rounded-circle ml-2 unsaved-icon"></span>
+                  withUnsaveMark && <span className="rounded-circle ml-2 unsaved-icon"/>
                 }
               </a>
             </li>
@@ -40,7 +40,7 @@ const TabList = (props) => {
 
 TabList.propTypes = {
   files: PropTypes.array,
-  activeId: PropTypes.number,
+  activeId: PropTypes.string,
   unsaveIds: PropTypes.array,
   onTabClick: PropTypes.func,
   onCloseTab: PropTypes.func

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, {useState, useEffect, useRef, useCallback} from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faEdit, faTimes, faTrash} from '@fortawesome/free-solid-svg-icons'
@@ -16,7 +16,7 @@ const FileList = (props) => {
   const escPressed = useKeyPress(27)
 
   useEffect(() => {
-    if (enterPressed && editStatus) {
+    if (enterPressed && editStatus && value.trim() !== '') {
       const editItem = files.find(file => file.id === editStatus)
       onSaveEdit(editItem.id, value)
       closeEdit()
